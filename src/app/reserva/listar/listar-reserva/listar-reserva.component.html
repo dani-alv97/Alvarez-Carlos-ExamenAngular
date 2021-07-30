@@ -1,0 +1,64 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<nav class="navbar navbar-expand-sm   navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="registrarcliente">Crear Cliente <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="registrarrestaurante">Crear Restaurante</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listarreserva">Listar Reservas del Cliente</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listarreserva2">Listar Reservas de Restaurante</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>Listar Reservas del Cliente</p>
+        </div>
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Ingrese la cedula del Cliente: </label>
+                        <input name="cedula" placeholder="Cedula.." [(ngModel)]="cedula" type="text" style="float: right;">
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btnSubmit" (click)="buscarCedula()">Buscar Cedula</button>
+            <br><br>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Restaurante</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>N° Personas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reserva of reserva">
+                        <td>{{reserva.cliente.nombre}}</td>
+                        <td>{{reserva.restaurante.nombre}}</td>
+                        <td>{{reserva.fecha}}</td>
+                        <td>{{reserva.hora}}</td>
+                        <td>{{reserva.numeroPersonas}}</td>
+                    </tr>
+                    <br>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

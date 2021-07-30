@@ -1,0 +1,64 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<nav class="navbar navbar-expand-sm   navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="registrarcliente">Registrar Cliente <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="registrarrestaurante">Registrar Restaurante <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listarreserva">Listar Reserva Cliente <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listarreserva2">Listar Reserva Restaurante <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>Registrar Cliente</p>
+        </div>
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input name="nombre" type="text" placeholder="Ingrese su nombre" [(ngModel)]="nombre" (input)="inputValidatorLetras($event)" style="float: right;">
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido:</label>
+                        <input name="apellido" type="text" placeholder="Ingrese su apellido" [(ngModel)]="apellido" (input)="inputValidatorLetras($event)" style="float: right;">
+                    </div>
+                    <div class="form-group">
+                        <label>Cedula:</label>
+                        <input id="cedula" name="cedula" type="text" placeholder="Ingrese su cedula" minlength="9" maxlength="10" [(ngModel)]="cedula" (input)="inputValidatorNumero($event)" style="float: right;">
+                    </div>
+                    <div class="form-group">
+                        <label>Direccion:</label>
+                        <input name="direccion" type="text" placeholder="Ingrese su direccion" [(ngModel)]="direccion" (input)="inputValidatorLetras($event)" style="float: right;">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono:</label>
+                        <input name="telefono" type="text" placeholder="Ingrese su telefono" minlength="9" maxlength="10" [(ngModel)]="telefono" (input)="inputValidatorNumero($event)" style="float: right;">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo:</label>
+                        <input name="correo" type="email" placeholder="Ingrese su correo" [(ngModel)]="correo" style="float: right;">
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btnSubmit" (click)="registrarCliente()">Crear Cliente</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<nav class="navbar navbar-expand-sm   navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="registrarcliente">Registrar Cliente <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="registrarrestaurante">Registrar Restaurante <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listarreserva">Listar Reserva Cliente <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listarreserva2">Listar Reserva Restaurante <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>Registrar Restaurante</p>
+        </div>
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input name="nombre" type="text" placeholder="Nombre del Restaurante" [(ngModel)]="nombre" style="float: right;" (input)="inputValidatorLetras($event)">
+                    </div>
+                    <div class="form-group">
+                        <label>Direccion:</label>
+                        <input name="direccion" type="text" placeholder="Direccion del Restaurante" [(ngModel)]="direccion" style="float: right;" (input)="inputValidatorLetras($event)">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono:</label>
+                        <input name="telefono" type="text" placeholder="telefono" minlength="9" maxlength="10" [(ngModel)]="telefono" style="float: right;" (input)="inputValidatorNumero($event)">
+                    </div>
+                    <div class="form-group">
+                        <label>Aforo Maximo:</label>
+                        <input name="aforomax" type="text" placeholder="Aforo maximo" [(ngModel)]="aforomax" style="float: right;" (input)="inputValidatorNumero($event)">
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btnSubmit" (click)="registrarRestaurante()">Crear Restaurante</button>
+        </div>
+    </div>
+</div>

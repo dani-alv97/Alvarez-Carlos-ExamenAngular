@@ -1,0 +1,20 @@
+export class Cliente {
+    id:number;
+    nombre:string;
+    apellido:string;
+    cedula:string;
+    direccion:string;
+    telefono:string;
+    correo:string;
+    listaReserva:Object[];
+    constructor(){
+        this.id=0;
+        this.nombre="";
+        this.apellido="";
+        this.cedula="";
+        this.direccion="";
+        this.telefono="";
+        this.correo="";
+        this.listaReserva=[];
+    }
+}
